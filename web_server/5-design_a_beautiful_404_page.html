@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>404 - Ceci n'est pas une page</title>
+<style>
+  body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #1e1e2f, #3a3a55);
+    font-family: 'Segoe UI', sans-serif;
+    color: #fff;
+    text-align: center;
+  }
+  .container {
+    max-width: 500px;
+  }
+  h1 {
+    font-size: 8rem;
+    margin: 0;
+    letter-spacing: 10px;
+    color: #ff6b6b;
+    text-shadow: 0 0 20px rgba(255,107,107,0.6);
+  }
+  p {
+    font-size: 1.3rem;
+    margin-top: 1rem;
+  }
+  .balloon {
+    font-size: 3rem;
+    animation: float 3s ease-in-out infinite;
+  }
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+  }
+</style>
+</head>
+<body>
+  <div class="container">
+    <div class="balloon">🎈</div>
+    <h1>404</h1>
+    <p>Ceci n'est pas une page. This page floated away like a lost balloon.</p>
+  </div>
+</body>
+</html>
