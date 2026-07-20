@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+# Installs and configures HAProxy to load balance between web-01 and web-02
+apt-get update
+apt-get install -y haproxy
+
+echo "ENABLED=1" >> /etc/default/haproxy
+
+cat >> /etc/haproxy/haproxy.cfg << 'HAPROXY_EOF'
+
+frontend http_front
+    bind *:80
+    default_backend http_back
+
+backend http_back
+    balance roundrobin
+    server 7151-web-01 54.145.129.102:80 check
+    server 7151-web-02 100.53.77.201:80 check
+HAPROXY_EOF
+
+service haproxy restart
